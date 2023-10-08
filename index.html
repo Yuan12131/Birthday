@@ -50,6 +50,8 @@
       background-size: cover;
       background-repeat: no-repeat;
       margin: 2vw;
+      position: relative;
+      top:-50px;
 
     }
   </style>
@@ -84,6 +86,14 @@
     const hbd = root.children[1].children[3];
     console.log(hbd);
 
+    const banner = root.children[2];
+    console.dir(banner);
+
+    hbd.addEventListener('click', function(){
+      banner.style.backgroundImage = "url('https://velog.velcdn.com/images%2F2ujin%2Fpost%2Fa09d8fbe-5322-4da7-9e0f-ed353fc625d9%2FIMG_0270.GIF')"
+      banner.style.width = "60vw";
+      banner.style.heigt = "50vh"
+    })
   </script>
 </body>
 </html>
