@@ -197,8 +197,12 @@
 
         logo.addEventListener('click', removeTransition)
         function removeTransition(){
-          createTwo.remove()
-          create.remove()
+          while (banner.hasChildNodes()) {
+            banner.removeChild(
+              banner.firstChild
+            );
+          }
+
           clearInterval(make)
           banner.style.backgroundImage = "url('https://mblogthumb-phinf.pstatic.net/MjAyMzAzMjBfMjU3/MDAxNjc5MjQyOTc0Mjk5.chViFDG7Hj8Uh68les6o7MVh-EXrkIDUtV_L6fJft6wg.WVGirY3LmKMnQcUFB-cMqFQf7J_H83QEN0rt4b9NWWAg.JPEG.jjung3015/IMG_9030.JPG?type=w800')"
       }
@@ -207,6 +211,11 @@
 
       setTimeout(function(){
        clearInterval(make);
+       while (banner.hasChildNodes()) {
+            banner.removeChild(
+              banner.firstChild
+            );
+          }
        let present = document.createElement("div");
         banner.appendChild(present);
         present.style.backgroundImage = "url('https://i.pinimg.com/736x/d4/7c/4c/d47c4cadaf2101057e654cc2709da03e.jpg')"
@@ -215,10 +224,14 @@
         present.style.backgroundRepeat = "no-repeat"
         present.style.backgroundSize = "contain";
         present.style.position = "relative";
-        present.style.right = "5vw"
+        present.style.left = "8vw"
 
         logo.addEventListener('click', function(){
-          present.remove()
+          while (banner.hasChildNodes()) {
+            banner.removeChild(
+              banner.firstChild
+            );
+          }
         })
       }, 10000);
 
