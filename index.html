@@ -162,6 +162,17 @@
       }
     };
 
+    gift.addEventListener('click', function(){
+      make = setInterval(function giftTransition(){
+      create = document.createElement("div");
+      banner.appendChild(create);
+        create.style.width = "100px";
+        create.style.height = "100px";
+        create.style.backgroundColor = "black"
+        
+
+      }, 500)
+    })
     
   </script>
 </body>
