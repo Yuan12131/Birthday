@@ -184,6 +184,10 @@
         create.style.left = x + "px"
         create.style.top = y + "px"
 
+        create.addEventListener('click', function(event) {
+          event.target.remove();
+        });
+
       }, 1500)
     })
     
