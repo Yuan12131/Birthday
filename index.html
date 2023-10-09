@@ -75,6 +75,8 @@
     const root = document.getElementById("root")
     console.dir(root);
 
+    const logo = root.children[0];
+
     const gift = root.children[1].children[0];
     console.log(gift);
 
@@ -127,6 +129,11 @@
           letterIcon.style.width = "50vw";
           letterIcon.style.heigt = "50vh";
       })
+      
+      logo.addEventListener('click', removeTransition)
+      function removeTransition(){
+        letterIcon.remove()
+      }
     };
 
     
