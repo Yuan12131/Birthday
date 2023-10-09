@@ -52,7 +52,7 @@
       margin: 2vw;
       position: relative;
       top:-50px;
-
+      display: flex;
     }
   </style>
 </head>
@@ -67,12 +67,16 @@
       <div>HBD</div>
     </div>
 
-    <div class="banner"></div>
+    <div class="banner">
+    </div>
 
   </div>
   <script>
     const root = document.getElementById("root")
     console.dir(root);
+
+    const logo = root.children[0];
+    const menu = root.children[1].children;
 
     const gift = root.children[1].children[0];
     console.log(gift);
@@ -88,12 +92,77 @@
 
     const banner = root.children[2];
     console.dir(banner);
+    
+    var audio = new Audio('bgm.mp3');
 
-    hbd.addEventListener('click', function(){
-      banner.style.backgroundImage = "url('https://velog.velcdn.com/images%2F2ujin%2Fpost%2Fa09d8fbe-5322-4da7-9e0f-ed353fc625d9%2FIMG_0270.GIF')"
-      banner.style.width = "60vw";
-      banner.style.heigt = "50vh"
-    })
+    hbd.addEventListener('click', hbdTransition)
+      function hbdTransition(){
+        const cake = document.createElement("div")
+        banner.appendChild(cake)
+        banner.style.background = "none" 
+        cake.style.backgroundImage = "url('https://velog.velcdn.com/images%2F2ujin%2Fpost%2Fa09d8fbe-5322-4da7-9e0f-ed353fc625d9%2FIMG_0270.GIF')"
+        cake.style.width = "60vw";
+        cake.style.heigt = "50vh";
+        cake.style.backgroundRepeat = "no-repeat"
+        cake.style.backgroundSize = "cover";
+
+      audio.play();
+
+      logo.addEventListener('click', removeTransition)
+      function removeTransition(){
+        cake.remove();
+        audio.pause();
+        banner.style.backgroundImage = "url('https://mblogthumb-phinf.pstatic.net/MjAyMzAzMjBfMjU3/MDAxNjc5MjQyOTc0Mjk5.chViFDG7Hj8Uh68les6o7MVh-EXrkIDUtV_L6fJft6wg.WVGirY3LmKMnQcUFB-cMqFQf7J_H83QEN0rt4b9NWWAg.JPEG.jjung3015/IMG_9030.JPG?type=w800')"
+      }
+
+    };
+
+    letter.addEventListener('click', letterTransition)
+    function letterTransition(){
+      let letterIcon = document.createElement("div");
+        banner.appendChild(letterIcon)
+        console.dir(letterIcon)
+        letterIcon.style.width = "50vw"
+        letterIcon.style.height = "50vh"
+        letterIcon.style.backgroundImage = "url('https://i.pinimg.com/474x/32/a4/23/32a4236d2f68c7cf7b596049cc5fa976.jpg')"
+        letterIcon.style.backgroundRepeat = "no-repeat"
+        letterIcon.style.backgroundSize = "cover";
+  
+        letterIcon.addEventListener('mouseover', function (){
+          letterIcon.style.backgroundImage = "url('https://cdn.maily.so/7sz91isdrrolbh1xl8qd1sduxb60')"
+          letterIcon.style.width = "50vw";
+          letterIcon.style.heigt = "50vh";
+      })
+
+      logo.addEventListener('click', removeTransition)
+      function removeTransition(){
+        letterIcon.remove()
+      }
+    };
+
+    camera.addEventListener('click', camTranisition)
+      function camTranisition(){
+        let camIcon = document.createElement("div");
+        banner.appendChild(camIcon)
+          camIcon.style.backgroundImage = "url('https://cdn-icons-png.flaticon.com/512/724/724362.png')"
+          camIcon.style.width = "40vw";
+          camIcon.style.heigt = "40vh";
+          banner.style.background = "none" 
+          camIcon.style.backgroundRepeat = "no-repeat"
+          camIcon.style.backgroundSize = "cover";
+          camIcon.style.position = "relative";
+          camIcon.style.left = "5vw"
+        
+        camIcon.addEventListener('click', function getVideo(){
+        })
+
+      logo.addEventListener('click', removeTransition)
+        function removeTransition(){
+          camIcon.remove()
+      }
+    };
+
+    
   </script>
 </body>
 </html>
