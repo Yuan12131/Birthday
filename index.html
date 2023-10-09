@@ -188,7 +188,18 @@
           event.target.remove();
         });
 
+        logo.addEventListener('click', removeTransition)
+        function removeTransition(){
+          clearInterval(make)
+      }
+
       }, 1500)
+
+      setTimeout(function(){
+       clearInterval(make);
+      }, 10000);
+
+
     })
     
   </script>
