@@ -111,17 +111,23 @@
       })
     });
 
-    letter.addEventListener('click', function(){
-      banner.style.backgroundImage = "url('https://i.pinimg.com/474x/32/a4/23/32a4236d2f68c7cf7b596049cc5fa976.jpg')"
-      banner.style.width = "50vw";
-      banner.style.heigt = "50vh"
+    letter.addEventListener('click', transition)
+    function transition(){
+      let letterIcon = document.createElement("div");
+        banner.appendChild(letterIcon)
+        console.dir(letterIcon)
+        letterIcon.style.width = "50vw"
+        letterIcon.style.height = "50vh"
+        letterIcon.style.backgroundImage = "url('https://i.pinimg.com/474x/32/a4/23/32a4236d2f68c7cf7b596049cc5fa976.jpg')"
+        letterIcon.style.backgroundRepeat = "no-repeat"
+        letterIcon.style.backgroundSize = "cover";
   
-      banner.addEventListener('mouseover', function (){
-        banner.style.backgroundImage = "url('https://cdn.maily.so/7sz91isdrrolbh1xl8qd1sduxb60')"
-        banner.style.width = "50vw";
-        banner.style.heigt = "50vh"
+        letterIcon.addEventListener('mouseover', function (){
+          letterIcon.style.backgroundImage = "url('https://cdn.maily.so/7sz91isdrrolbh1xl8qd1sduxb60')"
+          letterIcon.style.width = "50vw";
+          letterIcon.style.heigt = "50vh";
       })
-    });
+    };
 
     
   </script>
