@@ -53,7 +53,6 @@
       position: relative;
       top:-50px;
       display: flex;
-
     }
   </style>
 </head>
@@ -77,6 +76,7 @@
     console.dir(root);
 
     const logo = root.children[0];
+    const menu = root.children[1].children;
 
     const gift = root.children[1].children[0];
     console.log(gift);
@@ -140,14 +140,27 @@
       }
     };
 
-    camera.addEventListener('click', function(){
-      banner.style.backgroundImage = "url('https://cdn-icons-png.flaticon.com/512/724/724362.png')"
-      banner.style.width = "40vw";
-      banner.style.heigt = "20vh"
-  
-      banner.addEventListener('click', function getVideo(){
-      })
-    });
+    camera.addEventListener('click', camTranisition)
+      function camTranisition(){
+        let camIcon = document.createElement("div");
+        banner.appendChild(camIcon)
+          camIcon.style.backgroundImage = "url('https://cdn-icons-png.flaticon.com/512/724/724362.png')"
+          camIcon.style.width = "40vw";
+          camIcon.style.heigt = "40vh";
+          banner.style.background = "none" 
+          camIcon.style.backgroundRepeat = "no-repeat"
+          camIcon.style.backgroundSize = "cover";
+          camIcon.style.position = "relative";
+          camIcon.style.left = "5vw"
+        
+        camIcon.addEventListener('click', function getVideo(){
+        })
+
+      logo.addEventListener('click', removeTransition)
+        function removeTransition(){
+          camIcon.remove()
+      }
+    };
 
     
   </script>
