@@ -94,14 +94,21 @@
     
     var audio = new Audio('bgm.mp3');
 
-    hbd.addEventListener('click', function(){
+    hbd.addEventListener('click', hbdTransition)
+      function hbdTransition(){
       banner.style.backgroundImage = "url('https://velog.velcdn.com/images%2F2ujin%2Fpost%2Fa09d8fbe-5322-4da7-9e0f-ed353fc625d9%2FIMG_0270.GIF')"
       banner.style.width = "60vw";
       banner.style.heigt = "50vh"
 
       audio.play();
 
-    });
+      logo.addEventListener('click', removeTransition)
+      function removeTransition(){
+
+        audio.pause();
+      }
+
+    };
 
     letter.addEventListener('click', letterTransition)
     function letterTransition(){
