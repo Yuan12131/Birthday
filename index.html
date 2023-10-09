@@ -78,6 +78,7 @@
 
   </div>
   <script>
+    // 필요한 HTML 객체들 변수 선언
     const root = document.getElementById("root")
     console.dir(root);
 
@@ -101,6 +102,7 @@
     
     var audio = new Audio('bgm.mp3');
 
+    // hbd 클릭 시 케이크 이미지 나오고 음악 재생
     hbd.addEventListener('click', hbdTransition)
       function hbdTransition(){
         const cake = document.createElement("div")
@@ -114,6 +116,7 @@
 
       audio.play();
 
+      // 로고 클릭 시 케이크 이미지삭제, 음악정지, 원래 배너 이미지 띄우기
       logo.addEventListener('click', removeTransition)
       function removeTransition(){
         cake.remove();
@@ -123,6 +126,7 @@
 
     };
 
+    // letter 클릭 시 배너 letter 이미지로 변경
     letter.addEventListener('click', letterTransition)
     function letterTransition(){
       let letterIcon = document.createElement("div");
@@ -134,18 +138,21 @@
         letterIcon.style.backgroundRepeat = "no-repeat"
         letterIcon.style.backgroundSize = "cover";
   
+        // letter 이미지에 hover 시 편지 내용 공개
         letterIcon.addEventListener('mouseover', function (){
           letterIcon.style.backgroundImage = "url('https://cdn.maily.so/7sz91isdrrolbh1xl8qd1sduxb60')"
           letterIcon.style.width = "50vw";
           letterIcon.style.heigt = "50vh";
       })
 
+      // 로고 클릭 시 원래 배너 이미지로 돌려놓기
       logo.addEventListener('click', removeTransition)
       function removeTransition(){
         letterIcon.remove()
       }
     };
 
+    // 카메라 클릭시 카메라 이미지 띄우기
     camera.addEventListener('click', camTranisition)
       function camTranisition(){
         let camIcon = document.createElement("div");
@@ -162,12 +169,14 @@
         camIcon.addEventListener('click', function getVideo(){
         })
 
+      // 로고 클릭 시 원래 배너 이미지로 돌려놓기
       logo.addEventListener('click', removeTransition)
         function removeTransition(){
           camIcon.remove()
       }
     };
 
+    // gift 클릭 시 선물 랜덤 생성 되는 setIntercal 실행
     gift.addEventListener('click', function(){
       createTwo = document.createElement("h1");
       banner.appendChild(createTwo);
@@ -191,10 +200,12 @@
         create.style.left = x + "px"
         create.style.top = y + "px"
 
+        // 랜덤생성되는 선물 아이콘 클릭시 삭제
         create.addEventListener('click', function(event) {
           event.target.remove();
         });
 
+        // 로고 클릭시 setInterval로 생성된 모든 요소 삭제, interval 중지, 배너 이미지 원래대로 돌려놓기
         logo.addEventListener('click', removeTransition)
         function removeTransition(){
           while (banner.hasChildNodes()) {
@@ -209,6 +220,7 @@
         
       }, 1500)
 
+      // 10초 후 interval 중지, 생성된 모든 요소 삭제 후 새로운 선물 이미지 띄우기
       setTimeout(function(){
        clearInterval(make);
        while (banner.hasChildNodes()) {
@@ -226,6 +238,7 @@
         present.style.position = "relative";
         present.style.left = "8vw"
 
+        // 로고 클릭 시 생성된 배너의 모든 자식 요소 삭제
         logo.addEventListener('click', function(){
           while (banner.hasChildNodes()) {
             banner.removeChild(
@@ -240,3 +253,4 @@
   </script>
 </body>
 </html>
+<!-- 카메라 이벤트, 클릭 시 버튼 이벤트, 초기화면 돌아가기 보충 -->
