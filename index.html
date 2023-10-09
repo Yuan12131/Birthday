@@ -54,6 +54,12 @@
       top:-50px;
       display: flex;
     }
+
+    .banner > div{
+      background-image: url(https://png.pngtree.com/element_our/png_detail/20181021/gift-box-icon-vector-design-png_140870.jpg);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
   </style>
 </head>
 <body>
@@ -166,12 +172,19 @@
       make = setInterval(function giftTransition(){
       create = document.createElement("div");
       banner.appendChild(create);
+        banner.style.background= "none";
         create.style.width = "100px";
         create.style.height = "100px";
-        create.style.backgroundColor = "black"
-        
+        create.style.position = "absolute";
+        create.style.borderRadius = "50%"
 
-      }, 500)
+        const x = Math.random() * (600);
+        const y = Math.random() * (400);
+
+        create.style.left = x + "px"
+        create.style.top = y + "px"
+
+      }, 1500)
     })
     
   </script>
