@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  
+  
   <style>
     *{
       margin: 0;
@@ -171,12 +173,23 @@
           camIcon.style.heigt = "40vh";
           banner.style.background = "none" 
           camIcon.style.backgroundRepeat = "no-repeat"
-          camIcon.style.backgroundSize = "cover";
-          camIcon.style.position = "relative";
-          camIcon.style.left = "5vw"
+          camIcon.style.backgroundSize = "contain";
+          camIcon.style.backgroundPosition = "center";
         
-        camIcon.addEventListener('click', function getVideo(){
-        })
+          // 웹캠 시도중
+        // camIcon.addEventListener('click', getVideo)
+        //   function getVideo(){
+        //     const video = document.createElement("div");
+        //     banner.appendChild(video) 
+        //     navigator.mediaDevices.getUserMedia({video : true, audio : false})
+        //     .then(localMediaStream => {
+        //       video.src= window.URL.createObjectURL(localMediaStream);
+        //       video.play();
+        //     })
+        //     .catch(err => {
+        //       console.error("오류", err);
+        //     })
+        //   };
 
       // 로고 클릭 시 원래 배너 이미지로 돌려놓기
       logo.addEventListener('click', removeTransition)
