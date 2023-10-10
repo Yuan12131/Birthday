@@ -47,8 +47,9 @@
       width: 50vw;
       height: 50vh;
       background-image: url(https://mblogthumb-phinf.pstatic.net/MjAyMzAzMjBfMjU3/MDAxNjc5MjQyOTc0Mjk5.chViFDG7Hj8Uh68les6o7MVh-EXrkIDUtV_L6fJft6wg.WVGirY3LmKMnQcUFB-cMqFQf7J_H83QEN0rt4b9NWWAg.JPEG.jjung3015/IMG_9030.JPG?type=w800);
-      background-size: cover;
+      background-size: contain;
       background-repeat: no-repeat;
+      background-position: center;
       margin: 2vw;
       position: relative;
       top:-50px;
@@ -112,7 +113,8 @@
         cake.style.width = "60vw";
         cake.style.heigt = "50vh";
         cake.style.backgroundRepeat = "no-repeat"
-        cake.style.backgroundSize = "cover";
+        cake.style.backgroundSize = "contain";
+        cake.style.backgroundPosition = "center";
 
       audio.play();
 
@@ -122,6 +124,8 @@
         cake.remove();
         audio.pause();
         banner.style.backgroundImage = "url('https://mblogthumb-phinf.pstatic.net/MjAyMzAzMjBfMjU3/MDAxNjc5MjQyOTc0Mjk5.chViFDG7Hj8Uh68les6o7MVh-EXrkIDUtV_L6fJft6wg.WVGirY3LmKMnQcUFB-cMqFQf7J_H83QEN0rt4b9NWWAg.JPEG.jjung3015/IMG_9030.JPG?type=w800')"
+        banner.style.backgroundRepeat = "no-repeat";
+        banner.style.backgroundPosition = "center";
       }
 
     };
@@ -132,17 +136,22 @@
       let letterIcon = document.createElement("div");
         banner.appendChild(letterIcon)
         console.dir(letterIcon)
-        letterIcon.style.width = "50vw"
-        letterIcon.style.height = "50vh"
-        letterIcon.style.backgroundImage = "url('https://i.pinimg.com/474x/32/a4/23/32a4236d2f68c7cf7b596049cc5fa976.jpg')"
-        letterIcon.style.backgroundRepeat = "no-repeat"
-        letterIcon.style.backgroundSize = "cover";
+        letterIcon.style.width = "50vw";
+        letterIcon.style.height = "50vh";
+        letterIcon.style.backgroundImage = "url('https://i.pinimg.com/474x/32/a4/23/32a4236d2f68c7cf7b596049cc5fa976.jpg')";
+        letterIcon.style.backgroundRepeat = "no-repeat";
+        letterIcon.style.backgroundSize = "contain";
+        letterIcon.style.backgroundPosition = "center";
+
   
         // letter 이미지에 hover 시 편지 내용 공개
         letterIcon.addEventListener('mouseover', function (){
           letterIcon.style.backgroundImage = "url('https://cdn.maily.so/7sz91isdrrolbh1xl8qd1sduxb60')"
           letterIcon.style.width = "50vw";
           letterIcon.style.heigt = "50vh";
+          letterIcon.style.backgroundSize = "cover";
+          letterIcon.style.backgroundPosition = "center";
+
       })
 
       // 로고 클릭 시 원래 배너 이미지로 돌려놓기
@@ -215,19 +224,23 @@
           }
 
           clearInterval(make)
-          banner.style.backgroundImage = "url('https://mblogthumb-phinf.pstatic.net/MjAyMzAzMjBfMjU3/MDAxNjc5MjQyOTc0Mjk5.chViFDG7Hj8Uh68les6o7MVh-EXrkIDUtV_L6fJft6wg.WVGirY3LmKMnQcUFB-cMqFQf7J_H83QEN0rt4b9NWWAg.JPEG.jjung3015/IMG_9030.JPG?type=w800')"
+          banner.style.backgroundImage = "url('https://mblogthumb-phinf.pstatic.net/MjAyMzAzMjBfMjU3/MDAxNjc5MjQyOTc0Mjk5.chViFDG7Hj8Uh68les6o7MVh-EXrkIDUtV_L6fJft6wg.WVGirY3LmKMnQcUFB-cMqFQf7J_H83QEN0rt4b9NWWAg.JPEG.jjung3015/IMG_9030.JPG?type=w800')";
+          banner.style.backgroundRepeat = "no-repeat";
+          banner.style.backgroundPosition = "center"
       }
         
-      }, 1500)
+      }, 1000)
 
       // 5초 후 interval 중지, 생성된 모든 요소 삭제 후 새로운 선물 이미지 띄우기
       setTimeout(function(){
+
        clearInterval(make);
        while (banner.hasChildNodes()) {
             banner.removeChild(
               banner.firstChild
             );
           }
+
        let present = document.createElement("div");
         banner.appendChild(present);
         present.style.backgroundImage = "url('https://i.pinimg.com/736x/d4/7c/4c/d47c4cadaf2101057e654cc2709da03e.jpg')"
@@ -235,18 +248,9 @@
         present.style.heigt = "50vh";
         present.style.backgroundRepeat = "no-repeat"
         present.style.backgroundSize = "contain";
-        present.style.position = "relative";
-        present.style.left = "8vw"
+        present.style.backgroundPosition = "center";
 
-        // 로고 클릭 시 생성된 배너의 모든 자식 요소 삭제
-        logo.addEventListener('click', function(){
-          while (banner.hasChildNodes()) {
-            banner.removeChild(
-              banner.firstChild
-            );
-          }
-        })
-      }, 5000);
+      }, 9000);
 
     })
     
